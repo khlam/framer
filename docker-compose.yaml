@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  frame_extractor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./videos:/videos
+      - ./output:/output
+    environment:
+      - VIDEO_FOLDER=/videos
+      - OUTPUT_FOLDER=/output
+      - SAVE_EVERY_NTH_FRAME=5
